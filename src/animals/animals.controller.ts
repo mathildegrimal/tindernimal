@@ -7,11 +7,13 @@ import {
   Param,
   Delete,
   BadRequestException,
+  UseGuards,
 } from '@nestjs/common';
 import { AnimalsService } from './animals.service';
 import { CreateAnimalDto } from './dto/create-animal.dto';
 import { UpdateAnimalDto } from './dto/update-animal.dto';
 import {
+  ApiBearerAuth,
   ApiCreatedResponse,
   ApiNoContentResponse,
   ApiOkResponse,
@@ -20,8 +22,11 @@ import {
 } from '@nestjs/swagger';
 import { Animal } from './schemas/animal.schema';
 import { isValidObjectId } from 'mongoose';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 
 @Controller('animals')
+@ApiBearerAuth('access-token')
+@UseGuards(JwtAuthGuard)
 @ApiTags('Animals')
 export class AnimalsController {
   constructor(private readonly animalsService: AnimalsService) {}
