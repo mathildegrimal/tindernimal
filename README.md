@@ -7,20 +7,27 @@
 API for a future application, which will aim to help owners of dogs to find a partner for their bestfriend to reproduce with.   
 
   ## Installation  
-```bash $ npm install 
+```bash 
+$ npm install 
 $ docker compose up 
 ```
   ## Running the app  
+  
+  ### Local
 ```bash 
  # development 
 $ npm run start  
 
  # watch mode 
-$ npm run start:dev  
-
- # production mode 
-$ npm run start:prod 
+$ npm run start:dev   
 ```
+
+ Go to <a>http://localhost:3000/api/</a>
+ 
+ ### Production
+ 
+ Comming Soon
+ 
   ## Test  
 ```bash 
  # unit tests 
@@ -32,3 +39,4 @@ $ npm run test:e2e
  # test coverage 
 $ npm run test:cov 
 ```
+
