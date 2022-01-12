@@ -1,9 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document, ObjectId } from 'mongoose';
 export type OwnerDocument = Owner & Document;
-import * as mongoose from 'mongoose';
 import { ApiProperty } from '@nestjs/swagger';
-import { Animal } from 'src/animals/schemas/animal.schema';
 import { Transform } from 'class-transformer';
 @Schema()
 export class Owner {
