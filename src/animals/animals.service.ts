@@ -2,9 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { CreateAnimalDto } from './dto/create-animal.dto';
 import { UpdateAnimalDto } from './dto/update-animal.dto';
 import { InjectModel } from '@nestjs/mongoose';
-import { Animal } from './entities/animal.entity';
 import { Model } from 'mongoose';
-import { AnimalDocument } from './schemas/animal.schema';
+import { Animal, AnimalDocument } from './schemas/animal.schema';
 
 @Injectable()
 export class AnimalsService {
@@ -12,32 +11,42 @@ export class AnimalsService {
     @InjectModel(Animal.name) private animalModel: Model<AnimalDocument>,
   ) {}
 
-  create(createAnimalDto: CreateAnimalDto) {
+  async create(createAnimalDto: CreateAnimalDto) {
     const createdAnimal = new this.animalModel(createAnimalDto);
-    return createdAnimal.save();
+    return await createdAnimal.save();
   }
 
-  findAll() {
-    return this.animalModel.find().exec();
+  async findAll(): Promise<Animal[]> {
+    return await this.animalModel.find().populate('owner');
   }
 
-  findOne(id: number) {
-    return this.animalModel.findOne({ id: id }).exec();
+  async findOne(id: string) {
+    return await this.animalModel.findOne({ id: id }).exec();
   }
 
-  update(id: number, updateAnimalDto: UpdateAnimalDto) {
-    return this.animalModel.updateOne({ id: id }, updateAnimalDto).exec();
+  async update(id: string, updateAnimalDto: UpdateAnimalDto) {
+    const animal = await this.animalModel.findByIdAndUpdate(
+      id,
+      updateAnimalDto,
+    );
+    console.log(animal);
+    return animal;
   }
 
-  remove(id: number) {
-    return this.animalModel.findByIdAndRemove(id).exec();
+  async remove(id: string) {
+    return await this.animalModel.findByIdAndRemove(id).exec();
   }
 
-  findAllIsLoof(isLoof: boolean) {
-    return this.animalModel.find({ loof: isLoof }).exec();
+  async findAllIsLoof(isLoof: boolean) {
+    return await this.animalModel.find({ loof: isLoof }).exec();
   }
 
-  findAllByAge(age: number) {
-    return this.animalModel.find({ age: age }).exec();
+  async findAllByAge(age: number) {
+    return await this.animalModel.find({ age: age }).exec();
+  }
+
+  async findAllByOwner(ownerId: string) {
+    const animals = await this.animalModel.find({ owner: ownerId }).exec();
+    return animals;
   }
 }

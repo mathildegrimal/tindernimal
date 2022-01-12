@@ -6,13 +6,17 @@ import { UsersService } from './users/users.service';
 import { UsersModule } from './users/users.module';
 import { AnimalsModule } from './animals/animals.module';
 import { MongooseModule } from '@nestjs/mongoose';
+import { OwnerModule } from './owner/owner.module';
 
 @Module({
   imports: [
     AuthModule,
+    OwnerModule,
     UsersModule,
     AnimalsModule,
-    MongooseModule.forRoot('mongodb://root:changeit@localhost:27017/?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&ssl=false'),
+    MongooseModule.forRoot(
+      'mongodb://root:changeit@localhost:27017/?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&ssl=false',
+    ),
   ],
   controllers: [AppController],
   providers: [AppService, UsersService],

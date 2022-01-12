@@ -1,0 +1,37 @@
+[{
+  "_id": {
+    "$oid": "61dd42a5eba1c14543ec2b74"
+  },
+  "phoneNumber": "05869584938",
+  "birthDate": "09/02/1989",
+  "lastName": "Capulet",
+  "firstName": "Juliette",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61dd42a6eba1c14543ec2b76"
+  },
+  "phoneNumber": "0657483904",
+  "birthDate": "20/09/1950",
+  "lastName": "Joplin",
+  "firstName": "Janis",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ddcb3ff5b8f7a1d53b2aff"
+  },
+  "phoneNumber": "06857487584",
+  "birthDate": "27/09/1985",
+  "lastName": "Grimal",
+  "firstName": "Mathilde",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ddd6b4b7da0580bfd41444"
+  },
+  "phoneNumber": "0685948392",
+  "birthDate": "27/09/1990",
+  "lastName": "JOJO",
+  "firstName": "Jacky",
+  "__v": 0
+}]

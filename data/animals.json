@@ -1,0 +1,61 @@
+[{
+  "_id": {
+    "$oid": "61ddcbcff5b8f7a1d53b2b07"
+  },
+  "loof": false,
+  "breed": "Common",
+  "age": 1,
+  "name": "Raya",
+  "__v": 0,
+  "owner": {
+    "$oid": "61ddcb3ff5b8f7a1d53b2aff"
+  }
+},{
+  "_id": {
+    "$oid": "61ddd73053733d1e6693b97b"
+  },
+  "owner": {
+    "$oid": "61ddd6b4b7da0580bfd41444"
+  },
+  "loof": true,
+  "breed": "Berger Allemand",
+  "age": 4,
+  "name": "Roucky",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ddd8e1d9c77418d400590e"
+  },
+  "loof": false,
+  "breed": "Saucisse sur pate",
+  "age": 6,
+  "name": "Bouba",
+  "__v": 0,
+  "owner": {
+    "$oid": "61ddd6b4b7da0580bfd41444"
+  }
+},{
+  "_id": {
+    "$oid": "61dde077a763b7d605f9cb2d"
+  },
+  "loof": true,
+  "breed": "Berger australien",
+  "age": 6,
+  "name": "Samba",
+  "__v": 0,
+  "owner": {
+    "$oid": "61ddcb3ff5b8f7a1d53b2aff"
+  }
+},{
+  "_id": {
+    "$oid": "61dde077a763b7d605f9cb2e"
+  },
+  "loof": false,
+  "breed": "Caniche",
+  "age": 6,
+  "name": "Youyou",
+  "__v": 0,
+  "owner": {
+    "$oid": "61dd42a5eba1c14543ec2b74"
+  }
+}]

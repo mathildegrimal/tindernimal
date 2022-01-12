@@ -12,4 +12,7 @@ export class CreateAnimalDto {
 
   @IsBoolean()
   readonly loof: boolean;
+
+  @IsString()
+  readonly owner: string;
 }
