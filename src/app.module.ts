@@ -17,7 +17,9 @@ import { ConfigModule } from '@nestjs/config';
     UsersModule,
     AnimalsModule,
     MongooseModule.forRoot(
-      'mongodb://root:changeit@localhost:27017/?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false',
+      process.env.DB_NAME
+        ? `mongodb+srv://${process.env.DB_NAME}:${process.env.DB_PASSWORD}${process.env.DB_HOST}/myFirstDatabase?retryWrites=true&w=majority`
+        : 'mongodb://root:changeit@localhost:27017/?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false',
     ),
   ],
   controllers: [AppController],

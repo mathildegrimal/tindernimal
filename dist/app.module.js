@@ -27,7 +27,9 @@ AppModule = __decorate([
             owner_module_1.OwnerModule,
             users_module_1.UsersModule,
             animals_module_1.AnimalsModule,
-            mongoose_1.MongooseModule.forRoot('mongodb://root:changeit@localhost:27017/?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false'),
+            mongoose_1.MongooseModule.forRoot(process.env.DB_NAME
+                ? `mongodb+srv://${process.env.DB_NAME}:${process.env.DB_PASSWORD}${process.env.DB_HOST}/myFirstDatabase?retryWrites=true&w=majority`
+                : 'mongodb://root:changeit@localhost:27017/?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false'),
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService, users_service_1.UsersService],
