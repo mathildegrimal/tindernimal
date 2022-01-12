@@ -2,8 +2,7 @@ import { Module } from '@nestjs/common';
 import { AnimalsService } from './animals.service';
 import { AnimalsController } from './animals.controller';
 import { MongooseModule } from '@nestjs/mongoose';
-import { Animal } from './entities/animal.entity';
-import { AnimalSchema } from './schemas/animal.schema';
+import { Animal, AnimalSchema } from './schemas/animal.schema';
 
 @Module({
   imports: [

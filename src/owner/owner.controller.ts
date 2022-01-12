@@ -83,7 +83,7 @@ export class OwnerController {
   })
   @Patch(':id')
   update(
-    @Param('id') id: ObjectId,
+    @Param('id') id: string,
     @Body() updateOwnerDto: UpdateOwnerDto,
   ): Promise<Owner> {
     if (!isValidObjectId(id)) {

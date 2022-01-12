@@ -29,7 +29,7 @@ export class OwnerService {
     return foundOwner;
   }
 
-  async update(id: ObjectId, updateOwnerDto: UpdateOwnerDto) {
+  async update(id: string, updateOwnerDto: UpdateOwnerDto) {
     const owner = await this.ownerModel.findByIdAndUpdate(id, updateOwnerDto);
     if (owner != null) {
       return await this.ownerModel.findById(id);
