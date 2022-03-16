@@ -3,6 +3,7 @@
 # compiled output
 *.env
 /node_modules
+dist
 
 # Logs
 logs
