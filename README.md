@@ -2,18 +2,22 @@
   <img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a> 
 </p>  
 
-  ## Description  
+## Description
 
-API for a future application, which will aim to help owners of dogs to find a partner for their bestfriend to reproduce with.   
+API for a future application, which will aim to help owners of dogs to find a partner for their bestfriend to reproduce
+with. Created by Virginie Baumes, Mathilde Grimal, Antonin Val, Lise Guichard.
 
-  ## Installation  
+## Installation
+
 ```bash 
 $ npm install 
 $ docker compose up 
 ```
-  ## Running the app  
-  
-  ### Local
+
+## Running the app
+
+### Local
+
 ```bash 
  # development 
 $ npm run start  
@@ -22,13 +26,15 @@ $ npm run start
 $ npm run start:dev   
 ```
 
- Go to <a>http://localhost:3000/api/</a>
- 
- ### Production
- 
- Comming Soon
- 
-  ## Test  
+Go to <a>http://localhost:3000/api/</a>
+
+### Production
+
+Create at the root of the application a .env file with:
+DB_PASSWORD=yourpassword DB_NAME=yourDBNAME DB_HOST=yourDBHOST SECRETKEY=yoursecretkey
+
+## Test
+
 ```bash 
  # unit tests 
 $ npm run test

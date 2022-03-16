@@ -7,12 +7,14 @@ import {
   Param,
   Delete,
   BadRequestException,
+  UseGuards,
 } from '@nestjs/common';
 import { OwnerService } from './owner.service';
 import { CreateOwnerDto } from './dto/create-owner.dto';
 import { UpdateOwnerDto } from './dto/update-owner.dto';
 
 import {
+  ApiBearerAuth,
   ApiCreatedResponse,
   ApiNoContentResponse,
   ApiOkResponse,
@@ -22,8 +24,11 @@ import {
 } from '@nestjs/swagger';
 import { Owner } from './schemas/owner.schema';
 import { isValidObjectId, ObjectId } from 'mongoose';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 
 @Controller('owner')
+@ApiBearerAuth('access-token')
+@UseGuards(JwtAuthGuard)
 @ApiTags('Owner')
 export class OwnerController {
   constructor(private readonly ownerService: OwnerService) {}
