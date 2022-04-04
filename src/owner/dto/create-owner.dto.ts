@@ -1,5 +1,4 @@
-import { IsString, IsArray } from 'class-validator';
-import { Animal } from 'src/animals/schemas/animal.schema';
+import { IsString } from 'class-validator';
 
 export class CreateOwnerDto {
   @IsString()
